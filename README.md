@@ -134,21 +134,5 @@ export GEMINI_API_KEY="your-api-key"
 
 ---
 
-## Citation
-
-If you find this work, evidence graph schemas, or multi-agent architecture useful in your research, please cite:
-
-```bibtex
-@article{srivastava2024verionco,
-  title={VERIONCO: A Risk-Adaptive, Evidence-Centric Adversarial Multi-Agent Decision-Support Framework for Precision Oncology},
-  author={Srivastava, Ayush and Sinha, Abhigyan and Umakanthan, OmKumar Chandra and Marappan, Suguna},
-  journal={arXiv preprint},
-  year={2024},
-  institution={Vellore Institute of Technology, Chennai}
-}
-```
-
----
-
 ## License
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
