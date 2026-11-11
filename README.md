@@ -14,19 +14,19 @@
 
 ---
 
-## 📌 Executive Summary
+## Executive Summary
 
 Clinical application of Large Language Models (LLMs) in precision oncology is severely hindered by **confirmation bias** and **epistemic overconfidence**. Standard Retrieval-Augmented Generation (RAG) engines retrieve biomedical literature primarily to confirm initial therapeutic hypotheses, frequently missing critical negative factors such as acquired resistance alterations, drug contraindications, or multi-driver co-mutations.
 
 **VERIONCO** introduces a closed-loop dialectical decision-support architecture that structures clinical reasoning across **14 specialized agents** and **4 distinct phases**:
 1. **Multi-Omic Evidence Graph Synthesis:** Combines whole-exome somatic variant calls (MAF), copy-number profiles (GISTIC2.0), and gigapixel whole-slide image (WSI) patch embeddings (UNI ViT-Large/16) into a 295,854-node property graph.
 2. **Polarity-Decoupled Dual-Stream Retrieval:** Simultaneously retrieves affirming support evidence and contraindicative counter-evidence.
-3. **Adversarial Deliberation & Red-Teaming:** Incorporates a blinded independent second opinion, multidisciplinary orchestration, adversarial red-team critique (10 clinical failure modes), and required evidence-based plan revision.
+3. **Adversarial Deliberation and Red-Teaming:** Incorporates a blinded independent second opinion, multidisciplinary orchestration, adversarial red-team critique (10 clinical failure modes), and required evidence-based plan revision.
 4. **Conformal Uncertainty Gating:** Applies split-conformal prediction ($U(p) < 0.40$) to achieve selective classification, autonomously accepting confident cases and triaging complex, high-risk cases to human Multidisciplinary Tumor Boards (MDT).
 
 ---
 
-## 🔬 Key Empirical Findings (TCGA-LUAD, $n = 478$)
+## Key Empirical Findings (TCGA-LUAD, n = 478)
 
 * **Overconfidence Miscalibration Mitigation:** Reduces proxy Expected Calibration Error (ECE) by **46.5%** (from $0.8225$ in standard RAG to $0.4397$) and Brier score from $0.6816$ to $0.4415$.
 * **Breaking Confirmation Bias:** Counter-evidence retrieval uncovers resistance factors in **44.98%** of patients ($215/478$), driving a **14.85%** treatment recommendation pivot (McNemar $p < 0.0001$).
@@ -36,7 +36,7 @@ Clinical application of Large Language Models (LLMs) in precision oncology is se
 
 ---
 
-## 🏗️ 14-Agent Architectural Taxonomy
+## Multi-Agent Architectural Taxonomy
 
 | Agent ID | Agent Role | Subsystem / Phase | Engine / Model | Primary Function |
 | :--- | :--- | :--- | :--- | :--- |
@@ -57,7 +57,7 @@ Clinical application of Large Language Models (LLMs) in precision oncology is se
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 VERIONCO/
@@ -76,19 +76,20 @@ VERIONCO/
 │   ├── manifests/                             # 19 partitioned GDC WSI download manifests & batch summaries
 │   ├── retrieval/                             # CIViC evidence summaries, PubMed corpus, ClinicalTrials JSON
 │   └── tcga/                                  # TCGA-LUAD PanCancer Atlas 2018 tabular and clinical files
-├── VERIONCO_outputs/                          # Experimental checkpoints, graph exports, and evaluation metrics
+├── figures/                                   # High-resolution publication figures and dashboards
 ├── requirements.txt                           # Core Python dependencies
 ├── .gitignore                                 # Git rules (excludes API keys, large binaries, WSIs)
+├── LICENSE                                    # MIT License
 └── README.md                                  # Repository documentation
 ```
 
 ---
 
-## 🌐 Availability of Data and Materials
+## Availability of Data and Materials
 
 All datasets and models utilized in this study are publicly and freely accessible:
 
-1. **TCGA-LUAD Multi-Omic & Clinical Data ($n = 478$):**
+1. **TCGA-LUAD Multi-Omic and Clinical Data (n = 478):**
    * PanCancer Atlas publication portal: [https://gdc.cancer.gov/about-data/publications/pancanatlas](https://gdc.cancer.gov/about-data/publications/pancanatlas)
    * cBioPortal for Cancer Genomics (`luad_tcga_pan_can_atlas_2018`): [https://www.cbioportal.org/study/summary?id=luad_tcga_pan_can_atlas_2018](https://www.cbioportal.org/study/summary?id=luad_tcga_pan_can_atlas_2018)
 2. **Diagnostic Whole-Slide Pathology Images (WSI):**
@@ -109,11 +110,11 @@ All datasets and models utilized in this study are publicly and freely accessibl
 
 ---
 
-## 🚀 Quickstart & Installation
+## Quickstart and Installation
 
-### 1. Clone Repository & Setup Environment
+### 1. Clone Repository and Setup Environment
 ```bash
-git clone https://github.com/<your-username>/VERIONCO.git
+git clone https://github.com/ayush-srivastava1257/VERIONCO.git
 cd VERIONCO
 
 python -m venv .venv
@@ -133,7 +134,7 @@ export GEMINI_API_KEY="your-api-key"
 
 ---
 
-## 📖 Citation
+## Citation
 
 If you find this work, evidence graph schemas, or multi-agent architecture useful in your research, please cite:
 
@@ -149,6 +150,5 @@ If you find this work, evidence graph schemas, or multi-agent architecture usefu
 
 ---
 
-## ⚖️ License
+## License
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
-
