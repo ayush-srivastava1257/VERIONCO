@@ -1,0 +1,42 @@
+# Environment and secrets
+gemini_api_keys.json
+.env
+.env.*
+.venv/
+venv/
+env/
+
+# Python cache and temporary files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Microsoft Word lock files
+~$*.docx
+
+# Large datasets, whole slide images, and archives
+*.svs
+*.tif
+*.tiff
+*.zip
+*.tar
+*.tar.gz
+*.graphml
+data/wsi/
+data/raw/
+
+# Large raw TCGA data files (downloadable via links in README)
+data/tcga/luad_tcga_pan_can_atlas_2018/data_*.txt
+
+# Generated experiment outputs and caches (reproduced by running notebooks 00-10)
+VERIONCO_outputs/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+desktop.ini
